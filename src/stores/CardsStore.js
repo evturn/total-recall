@@ -3,7 +3,7 @@ import Reflux from 'reflux'
 import Card from '../data/Card'
 import { CardActions } from '../actions'
 
-import find from 'lodash.find'
+import _ from 'lodash'
 
 const CARD_KEY = 'total-recall-cards'
 
@@ -46,7 +46,7 @@ const cardsStore = Reflux.createStore({
   },
 
   editCard(newCard) {
-    const match = find(
+    const match = _.find(
       this.cards,
       card => card.id === newCard.id
     )

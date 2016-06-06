@@ -56,7 +56,7 @@ class Review extends Component {
     if (this.state.currentReview < this.state.reviews.length) {
       return (
         <ViewCard
-          onReview={_ => this.onReview()}
+          onReview={_ => this.onReview(this.state.currentReview)}
           continue={_ => this.nextReview()}
           quit={this.props.quit}
           {...this.state.reviews[this.state.currentReview]}

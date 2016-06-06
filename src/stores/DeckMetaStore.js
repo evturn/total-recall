@@ -80,6 +80,6 @@ const decksStore = Reflux.createStore({
     this.decks.push(deck)
     this.emit()
   }
-});
+})
 
-module.exports = decksStore;
+export default decksStore

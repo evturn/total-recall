@@ -6,9 +6,7 @@ import CardsStore from './CardsStore'
 import DeckMetaStore from './DeckMetaStore'
 import CardReview from '../data/Review'
 
-import sample from 'lodash.sample'
-import pluck from 'lodash.pluck'
-import shuffle from 'lodash.shuffle'
+import _ from 'lodash'
 
 const reviewStore = Reflux.createStore({
   init() {
@@ -43,7 +41,7 @@ const reviewStore = Reflux.createStore({
     this.updateCurrentDeckInfo()
   },
 
-  _updateCurrentDeckInfo() {
+  updateCurrentDeckInfo() {
     if (this.currentDeckID == null) {
       return
     }
@@ -77,7 +75,7 @@ const reviewStore = Reflux.createStore({
           prompt: x[sideOne],
           correctAnswer: x[sideTwo],
           answers: [x[sideTwo]].concat(
-            sample(pluck(others, sideTwo), 3)
+            _.sample(_.pluck(others, sideTwo), 3)
           )
         }
       })
@@ -86,7 +84,7 @@ const reviewStore = Reflux.createStore({
     const reviews = makeReviews('front', 'back')
       .concat(makeReviews('back', 'front'))
 
-    return shuffle(reviews)
+    return _.shuffle(reviews)
   },
 
   onCardReview(cardID, orientation, correct) {
