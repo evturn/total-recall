@@ -15,7 +15,7 @@ const cardsStore = Reflux.createStore({
     this.listenTo(CardActions.editCard,       this.editCard)
     this.cards = []
     this.emit()
-  }
+  },
 
   async loadCards() {
     try {
@@ -30,7 +30,7 @@ const cardsStore = Reflux.createStore({
     } catch (e) {
       console.error('AsyncStorage error:', e.message)
     }
-  }
+  },
 
   async writeCards() {
     try {
@@ -38,12 +38,12 @@ const cardsStore = Reflux.createStore({
     } catch (e) {
       console.error('AsyncStorage error:', e.message)
     }
-  }
+  },
 
   deleteAllCards() {
     this.cards = []
     this.emit()
-  }
+  },
 
   editCard(newCard) {
     const match = find(
@@ -53,12 +53,12 @@ const cardsStore = Reflux.createStore({
 
     match.setFromObject(newCard)
     this.emit()
-  }
+  },
 
   createCard(front, back, deckID) {
     this.cards.push(new Card(front, back, deckID))
     this.emit()
-  }
+  },
 
   emit() {
     this.writeCards().done()
