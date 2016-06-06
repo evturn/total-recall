@@ -20,7 +20,7 @@ class Deck {
     this.dueCards = 0
   }
 
-  static from Object(obj) {
+  static fromObject(obj) {
     const deck = new Deck(obj.name)
     deck.setFromObject(obj)
     return deck
