@@ -10,13 +10,13 @@ class Recall extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to Hell!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, drink this random beverage.
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
+          Press rm -rf ~/* to begin,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
       </View>
